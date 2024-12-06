@@ -1,0 +1,10 @@
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\bin\Debug\ProjectBaoCom.exe.config
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\bin\Debug\ProjectBaoCom.exe
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\bin\Debug\ProjectBaoCom.pdb
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\obj\Debug\ProjectBaoCom.csproj.AssemblyReference.cache
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\obj\Debug\ProjectBaoCom.Properties.Resources.resources
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\obj\Debug\ProjectBaoCom.csproj.GenerateResource.cache
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\obj\Debug\ProjectBaoCom.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\obj\Debug\ProjectBaoCom.exe
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\obj\Debug\ProjectBaoCom.pdb
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectBaoCom\obj\Debug\ProjectBaoCom.FrmLogin.resources
