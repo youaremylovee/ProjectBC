@@ -10,9 +10,11 @@ C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\obj\Debug\Si
 C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\obj\Debug\SinhVienUI.pdb
 C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\EntityFramework.dll
 C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\EntityFramework.xml
-C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\obj\Debug\SinhVienUI.csproj.Up2Date
-C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\ProjectBaoCom.exe
-C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\ProjectBaoCom.pdb
-C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\ProjectBaoCom.exe.config
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\Microsoft.Toolkit.Uwp.Notifications.dll
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\System.ValueTuple.dll
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\Microsoft.Toolkit.Uwp.Notifications.pdb
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\obj\Debug\SinhVienUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\obj\Debug\SinhVienUI.exe.config
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\ProjectAbstraction.dll
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\SinhVienUI\bin\Debug\ProjectAbstraction.pdb

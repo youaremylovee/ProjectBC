@@ -1,0 +1,6 @@
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectAbstraction\bin\Debug\ProjectAbstraction.dll
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectAbstraction\bin\Debug\ProjectAbstraction.pdb
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectAbstraction\obj\Debug\ProjectAbstraction.csproj.AssemblyReference.cache
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectAbstraction\obj\Debug\ProjectAbstraction.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectAbstraction\obj\Debug\ProjectAbstraction.dll
+C:\Users\Nguyen Dan Truong\Desktop\Data\Freelance\BaoCom\ProjectAbstraction\obj\Debug\ProjectAbstraction.pdb

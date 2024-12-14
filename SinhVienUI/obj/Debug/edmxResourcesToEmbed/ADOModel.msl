@@ -24,6 +24,7 @@
     <EntitySetMapping Name="MenuFoods">
       <EntityTypeMapping TypeName="QuanLyComTruaModel.MenuFood">
         <MappingFragment StoreEntitySet="MenuFoods">
+          <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Note" ColumnName="Note" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="MenuId" ColumnName="MenuId" />
@@ -63,6 +64,23 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clouds">
+      <EntityTypeMapping TypeName="QuanLyComTruaModel.Cloud">
+        <MappingFragment StoreEntitySet="Cloud">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configurations">
+      <EntityTypeMapping TypeName="QuanLyComTruaModel.Configuration">
+        <MappingFragment StoreEntitySet="Configuration">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

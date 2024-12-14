@@ -31,5 +31,7 @@ namespace SinhVienUI
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Cloud> Clouds { get; set; }
+        public virtual DbSet<Configuration> Configurations { get; set; }
     }
 }

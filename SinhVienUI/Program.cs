@@ -16,11 +16,7 @@ namespace SinhVienUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain(new ProjectBaoCom.Session()
-            {
-                Role = "Student",
-                UserId = 1
-            }));
+            Application.Run(new FrmMain());
         }
     }
 }

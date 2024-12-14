@@ -1,12 +1,13 @@
-﻿using ProjectBaoCom;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using ProjectAbstraction;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,19 +18,75 @@ namespace SinhVienUI
         private readonly QuanLyComTruaEntities context = new QuanLyComTruaEntities();
         private Menu currentDayMeal = null;
         private Menu currentNightMeal = null;
-        private Session _session;
+        private Session _session = Session.Instance;
         private int currentPageNotification = 1;
-        public FrmMain(Session session)
+        private List<MenuFood> menuLunch = new List<MenuFood>();
+        private List<MenuFood> menuDinner = new List<MenuFood>();
+        private readonly Form _frmLogin;
+
+        // Task cancel
+        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+        public FrmMain()
         {
-            _session = session;
             InitializeComponent();
+        }
+        public FrmMain(Form frmLogin)
+        {
+            InitializeComponent();
+            _frmLogin = frmLogin;
+        }
+        private void ScheduleTask()
+        {
+            int GioComTrua = int.Parse(context.Configurations
+                .FirstOrDefault(x => x.Name == "TimeLunch")
+                .Value);
+            int GioComToi = int.Parse(context.Configurations
+                .FirstOrDefault(x => x.Name == "TimeDinner")
+                .Value);
+            bool canScheludeComTrua = btnBaoComTrua.Visible;
+            bool canScheludeComToi = btnBaoComToi.Visible;
+            DateTime now = DateTime.Now;
+            DateTime timeHenGioComTrua = new DateTime(now.Year, now.Month, now.Day, GioComTrua, 0, 0).AddMinutes(-10);
+            DateTime timeHenGioComToi = new DateTime(now.Year, now.Month, now.Day, GioComToi, 0, 0).AddMinutes(-10);
+            bool testing = false;
+
+            //For testing (tự động báo sau 5s và 10s)
+            /*testing = true;
+            timeHenGioComTrua = now.AddSeconds(5);
+            timeHenGioComToi = now.AddSeconds(10);*/
+
+            if ((now < timeHenGioComTrua && canScheludeComTrua) || testing)
+            {
+                var delay = timeHenGioComTrua - now;
+                Task.Delay(delay, cancellationTokenSource.Token).ContinueWith(t =>
+                {
+                    if (!t.IsCanceled)
+                    {
+                        new ToastContentBuilder()
+                            .AddText("Thông báo cơm trưa")
+                            .AddText("Đã đến giờ báo cơm trưa (hết hạn báo sau 10 phút nữa)")
+                            .Show(); 
+                    }
+                });
+            }
+            if ((now < timeHenGioComToi && canScheludeComToi) || testing)
+            {
+                var delay = timeHenGioComToi - now; 
+                Task.Delay(delay, cancellationTokenSource.Token).ContinueWith(t =>
+                {
+                    if (!t.IsCanceled)
+                    {
+                        new ToastContentBuilder()
+                            .AddText("Thông báo cơm tối")
+                            .AddText("Đã đến giờ báo cơm tối (hết hạn báo sau 10 phút nữa)")
+                            .Show(); 
+                    }
+                });
+            }
         }
         private void loadMenus()
         {
             //Clear old menus 
-            btnBaoComTrua.Visible = false;
-            btnBaoComToi.Visible = false;
-
             dgvDay.Rows.Clear();
             dgvNight.Rows.Clear();
             currentDayMeal = null;
@@ -40,17 +97,14 @@ namespace SinhVienUI
             var currentMenu = lstMenus
                       .Where(x => x.Date.ToString("yyyy-MM-dd") == dateString)
                       .ToList();
-            if (currentMenu.Count() == 0)
-            {
-                MessageBox.Show("Chưa có thực đơn cho ngày hôm nay");
-                return;
-            }
             foreach (var item in currentMenu)
             {
                 if (item != null && item.MenuFoods != null)
                 {
                     var dgv = item.MealType == "Trưa" ? dgvDay : dgvNight;
                     var btn = item.MealType == "Trưa" ? btnBaoComTrua : btnBaoComToi;
+                    var listMenu = item.MealType == "Trưa" ? menuLunch : menuDinner;
+                    listMenu.Clear();
                     // validate button
                     if (item.MealType == "Trưa")
                     {
@@ -77,14 +131,29 @@ namespace SinhVienUI
                     }
                     foreach (var menuFood in item.MenuFoods)
                     {
-                        if(item.Date.Date >= DateTime.Now.Date)
-                        {
-                            btn.Visible = true;
-                        }
                         dgv.Rows.Add(menuFood.DishName, menuFood.Category, menuFood.Note);
+                        listMenu.Add(menuFood);
                     }
                 }
             }
+            //Validate button báo cơm
+            var dt = date.Value;
+            var today = DateTime.Now;
+            bool invalidBaoComTrua = dt.Date < today.Date;
+            bool invalidBaoComToi = dt.Date < today.Date;
+            int gioComTrua = int.Parse(context.Configurations
+                .FirstOrDefault(x => x.Name == "TimeLunch")
+                .Value);
+            int gioComToi = int.Parse(context.Configurations
+                .FirstOrDefault(x => x.Name == "TimeDinner")
+                .Value);
+            invalidBaoComTrua = invalidBaoComTrua || (dt.Date == today.Date && today.Hour >= gioComTrua) || menuLunch.Count() == 0;
+            invalidBaoComToi = invalidBaoComToi || (dt.Date == today.Date && today.Hour >= gioComToi) || menuDinner.Count() == 0;
+            btnBaoComToi.Visible = !invalidBaoComToi;
+            btnBaoComTrua.Visible = !invalidBaoComTrua;
+            //Load image
+            LoadImageLunch();
+            LoadImageDinner();
         }
         private void loadOrdered()
         {
@@ -109,7 +178,9 @@ namespace SinhVienUI
             // Load
             var date = monthCalendar.SelectionStart;
             var listMenus = context.Menus.ToList();
-            var menus = listMenus.Where(m => m.Date.Date == date.Date);
+            var menus = context.Orders.ToList()
+                .Where(m => m.UserID == _session.UserId && m.Menu.Date.Date == date.Date)
+                .Select(m => m.Menu);
             foreach (var menu in menus)
             {
                 var dgv = menu.MealType == "Trưa" ? dgvHDay : dgvHNight;
@@ -181,25 +252,11 @@ namespace SinhVienUI
             typeForm.SelectedIndex = 0;
             formMeal.SelectedIndex = 0;
             loadMenus();
-            loadOrdered();
-            loadHistory();
-            loadUser();
+            ScheduleTask();
         }
 
         private void date_ValueChanged(object sender, EventArgs e)
         {
-            var dt = date.Value;
-            var today = DateTime.Now;
-            if(dt.Date < today.Date)
-            {
-                btnBaoComToi.Visible = false;
-                btnBaoComTrua.Visible = false;
-            }
-            else
-            {
-                btnBaoComToi.Visible = true;
-                btnBaoComTrua.Visible = true;
-            }
             loadMenus();
         }
 
@@ -207,7 +264,7 @@ namespace SinhVienUI
         {
             if (currentDayMeal == null)
             {
-                MessageBox.Show("Chưa có thực đơn cho bữa trưa ngày đã chọn");
+                MessageBox.Show("Chưa có thực đơn cho bữa trưa ngày đã chọn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -246,7 +303,7 @@ namespace SinhVienUI
         {
             if (currentNightMeal == null)
             {
-                MessageBox.Show("Chưa có thực đơn cho bữa tối ngày đã chọn");
+                MessageBox.Show("Chưa có thực đơn cho bữa tối ngày đã chọn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -288,9 +345,20 @@ namespace SinhVienUI
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = tabControl1.SelectedIndex;
-            if(index == 2)
+            switch(index)
             {
-                loadNotification();
+                case 0:
+                    loadMenus();
+                    break;
+                case 1:
+                    loadOrdered();
+                    break;
+                case 2:
+                    loadNotification();
+                    break;
+                case 4:
+                    loadUser();
+                    break;
             }
         }
 
@@ -312,13 +380,13 @@ namespace SinhVienUI
             string content = formContent.Text;
             if (string.IsNullOrEmpty(subject) || string.IsNullOrEmpty(content))
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DateTime dateSubmit = formDate.Value;
             if (dateSubmit.Date > DateTime.Now.Date)
             {
-                MessageBox.Show("Ngày phản ánh không được quá hôm nay !");
+                MessageBox.Show("Ngày phản ánh không được quá hôm nay !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             int menuId = -1;
@@ -336,7 +404,7 @@ namespace SinhVienUI
                 }
                 else
                 {
-                    MessageBox.Show("Ngày hôm đó không có bữa " + mealType + " !");
+                    MessageBox.Show("Ngày hôm đó không có bữa " + mealType + " !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -371,17 +439,17 @@ namespace SinhVienUI
         {
             if (string.IsNullOrEmpty(txtHoTen.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtSdt.Text) || string.IsNullOrEmpty(txtChuyenNganh.Text))
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (!isValidEmail(txtEmail.Text))
             {
-                MessageBox.Show("Email không hợp lệ");
+                MessageBox.Show("Email không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (!isValidPhone(txtSdt.Text))
             {
-                MessageBox.Show("Số điện thoại không hợp lệ");
+                MessageBox.Show("Số điện thoại không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var old = context.Users.Find(_session.UserId);
@@ -394,6 +462,83 @@ namespace SinhVienUI
                 context.Users.Attach(old);
                 context.Entry(old).State = EntityState.Modified;
                 context.SaveChanges();
+                MessageBox.Show("Cập nhật thông tin thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void LoadImageLunch()
+        {
+            try
+            {
+                var pathDirectory = context.Configurations
+                .FirstOrDefault(x => x.Name == "PathImage")
+                .Value;
+                if(dgvDay.CurrentRow == null)
+                {
+                    pictureComTrua.Image = null;
+                    return;
+                }
+                int index = dgvDay.CurrentRow.Index;
+                var fileImage = menuLunch[index].Image;
+                if (string.IsNullOrEmpty(fileImage))
+                {
+                    return;
+                }
+                var path = Path.Combine(pathDirectory, fileImage);
+                pictureComTrua.Image = Image.FromFile(path);
+            }
+            catch (Exception)
+            {
+                pictureComTrua.Image = null;
+            }
+        }
+        private void LoadImageDinner()
+        {
+            try
+            {
+                var pathDirectory = context.Configurations
+                    .FirstOrDefault(x => x.Name == "PathImage").Value;
+                if (dgvNight.CurrentRow == null)
+                {
+                    pictureComToi.Image = null;
+                    return;
+                }
+                int index = dgvNight.CurrentRow.Index;
+                var fileImage = menuDinner[index].Image;
+                if (string.IsNullOrEmpty(fileImage))
+                {
+                    return;
+                }
+                var path = Path.Combine(pathDirectory, fileImage);
+                pictureComToi.Image = Image.FromFile(path);
+            }
+            catch (Exception)
+            {
+                pictureComToi.Image = null;
+            }
+        }
+        private void dgvDay_SelectionChanged(object sender, EventArgs e)
+        {
+            LoadImageLunch();
+        }
+
+        private void dgvNight_SelectionChanged(object sender, EventArgs e)
+        {
+            LoadImageDinner();
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cancellationTokenSource?.Cancel();
+            _frmLogin.Show();
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            var dialogResult = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Session.ClearSession();
+                this.Close();
             }
         }
     }

@@ -19,6 +19,7 @@ namespace SinhVienUI
         public string DishName { get; set; }
         public string Category { get; set; }
         public string Note { get; set; }
+        public string Image { get; set; }
     
         public virtual Menu Menu { get; set; }
     }

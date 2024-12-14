@@ -31,6 +31,7 @@
     <Property Name="Category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Menu" Relationship="Self.FK_MenuFoods_MenuFoods" FromRole="MenuFoods" ToRole="Menu" />
     <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Notification">
     <Key>
@@ -105,6 +106,8 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Order" EntitySet="Orders" />
     </AssociationSet>
+    <EntitySet Name="Clouds" EntityType="QuanLyComTruaModel.Cloud" />
+    <EntitySet Name="Configurations" EntityType="QuanLyComTruaModel.Configuration" />
   </EntityContainer>
   <EntityType Name="User">
     <Key>
@@ -157,4 +160,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Cloud">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Configuration">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

@@ -49,7 +49,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -57,10 +56,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(234, 242);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.Size = new System.Drawing.Size(60, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tài khoản";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Email";
             // 
             // tk
             // 
@@ -69,7 +67,6 @@
             this.tk.Name = "tk";
             this.tk.Size = new System.Drawing.Size(299, 30);
             this.tk.TabIndex = 2;
-            this.tk.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // mk
             // 
@@ -99,7 +96,6 @@
             this.label3.Size = new System.Drawing.Size(68, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Vai trò";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // vaitro
             // 
@@ -114,7 +110,6 @@
             this.vaitro.Name = "vaitro";
             this.vaitro.Size = new System.Drawing.Size(299, 33);
             this.vaitro.TabIndex = 6;
-            this.vaitro.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnDangNhap
             // 
@@ -145,6 +140,8 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

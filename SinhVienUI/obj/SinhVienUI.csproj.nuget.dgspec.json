@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\SinhVienUI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectAbstraction\\ProjectAbstraction.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectAbstraction\\ProjectAbstraction.csproj",
+        "projectName": "ProjectAbstraction",
+        "projectPath": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectAbstraction\\ProjectAbstraction.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\SinhVienUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\SinhVienUI.csproj",
+        "projectName": "SinhVienUI",
+        "projectPath": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\SinhVienUI.csproj",
+        "packagesPath": "C:\\Users\\Nguyen Dan Truong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Nguyen Dan Truong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectAbstraction\\ProjectAbstraction.csproj": {
+                "projectPath": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectAbstraction\\ProjectAbstraction.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Microsoft.Toolkit.Uwp.Notifications": {
+              "target": "Package",
+              "version": "[7.1.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="88bc89f4288645298cf4925c7b49acfd" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="QuanLyComTruaModel.Configuration" Width="1.5" PointX="5.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.Feedback" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.Menu" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.MenuFood" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.Notification" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.Order" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.User" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyComTruaModel.FK_Feedback_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyComTruaModel.FK_MenuFoods_MenuFoods" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyComTruaModel.FK_Orders_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyComTruaModel.FK_Notifications_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyComTruaModel.FK_Orders_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.Cloud" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureComToi = new System.Windows.Forms.PictureBox();
+            this.pictureComTrua = new System.Windows.Forms.PictureBox();
             this.btnBaoComToi = new System.Windows.Forms.Button();
             this.btnBaoComTrua = new System.Windows.Forms.Button();
             this.dgvNight = new System.Windows.Forms.DataGridView();
@@ -38,13 +41,11 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dgvDay = new System.Windows.Forms.DataGridView();
             this.DishName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DishType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -68,7 +69,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.formMeal = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.formContent = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.formDate = new System.Windows.Forms.DateTimePicker();
@@ -78,7 +78,9 @@
             this.formSubject = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.txtChuyenNganh = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtChucVu = new System.Windows.Forms.TextBox();
@@ -91,12 +93,13 @@
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.listImageTabs = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureComToi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureComTrua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHNight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDay)).BeginInit();
@@ -112,6 +115,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.ImageList = this.listImageTabs;
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -122,16 +126,17 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureComToi);
+            this.tabPage1.Controls.Add(this.pictureComTrua);
             this.tabPage1.Controls.Add(this.btnBaoComToi);
             this.tabPage1.Controls.Add(this.btnBaoComTrua);
             this.tabPage1.Controls.Add(this.dgvNight);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.dgvDay);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.date);
+            this.tabPage1.ImageIndex = 3;
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -139,6 +144,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thực đơn hôm nay";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureComToi
+            // 
+            this.pictureComToi.Location = new System.Drawing.Point(27, 492);
+            this.pictureComToi.Name = "pictureComToi";
+            this.pictureComToi.Size = new System.Drawing.Size(160, 160);
+            this.pictureComToi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureComToi.TabIndex = 11;
+            this.pictureComToi.TabStop = false;
+            // 
+            // pictureComTrua
+            // 
+            this.pictureComTrua.Location = new System.Drawing.Point(27, 199);
+            this.pictureComTrua.Name = "pictureComTrua";
+            this.pictureComTrua.Size = new System.Drawing.Size(160, 160);
+            this.pictureComTrua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureComTrua.TabIndex = 10;
+            this.pictureComTrua.TabStop = false;
             // 
             // btnBaoComToi
             // 
@@ -176,6 +199,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dgvNight.Location = new System.Drawing.Point(214, 439);
+            this.dgvNight.MultiSelect = false;
             this.dgvNight.Name = "dgvNight";
             this.dgvNight.ReadOnly = true;
             this.dgvNight.RowHeadersWidth = 51;
@@ -183,6 +207,7 @@
             this.dgvNight.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNight.Size = new System.Drawing.Size(603, 213);
             this.dgvNight.TabIndex = 7;
+            this.dgvNight.SelectionChanged += new System.EventHandler(this.dgvNight_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -190,6 +215,7 @@
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -197,6 +223,7 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -204,6 +231,7 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // label3
             // 
@@ -214,16 +242,6 @@
             this.label3.Size = new System.Drawing.Size(87, 29);
             this.label3.TabIndex = 6;
             this.label3.Text = "Bữa tối";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SinhVienUI.Properties.Resources.night;
-            this.pictureBox2.Location = new System.Drawing.Point(36, 439);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // dgvDay
             // 
@@ -237,6 +255,7 @@
             this.DishType,
             this.Note});
             this.dgvDay.Location = new System.Drawing.Point(214, 146);
+            this.dgvDay.MultiSelect = false;
             this.dgvDay.Name = "dgvDay";
             this.dgvDay.ReadOnly = true;
             this.dgvDay.RowHeadersWidth = 51;
@@ -244,6 +263,7 @@
             this.dgvDay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDay.Size = new System.Drawing.Size(603, 213);
             this.dgvDay.TabIndex = 4;
+            this.dgvDay.SelectionChanged += new System.EventHandler(this.dgvDay_SelectionChanged);
             // 
             // DishName
             // 
@@ -251,6 +271,7 @@
             this.DishName.MinimumWidth = 6;
             this.DishName.Name = "DishName";
             this.DishName.ReadOnly = true;
+            this.DishName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // DishType
             // 
@@ -258,6 +279,7 @@
             this.DishType.MinimumWidth = 6;
             this.DishType.Name = "DishType";
             this.DishType.ReadOnly = true;
+            this.DishType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Note
             // 
@@ -265,6 +287,7 @@
             this.Note.MinimumWidth = 6;
             this.Note.Name = "Note";
             this.Note.ReadOnly = true;
+            this.Note.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // label2
             // 
@@ -275,16 +298,6 @@
             this.label2.Size = new System.Drawing.Size(101, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Bữa trưa";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SinhVienUI.Properties.Resources.day;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 160);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -314,6 +327,7 @@
             this.tabPage2.Controls.Add(this.dgvHDay);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.monthCalendar);
+            this.tabPage2.ImageIndex = 2;
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -333,6 +347,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dgvHNight.Location = new System.Drawing.Point(388, 395);
+            this.dgvHNight.MultiSelect = false;
             this.dgvHNight.Name = "dgvHNight";
             this.dgvHNight.ReadOnly = true;
             this.dgvHNight.RowHeadersWidth = 51;
@@ -376,6 +391,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dgvHDay.Location = new System.Drawing.Point(388, 98);
+            this.dgvHDay.MultiSelect = false;
             this.dgvHDay.Name = "dgvHDay";
             this.dgvHDay.ReadOnly = true;
             this.dgvHDay.RowHeadersWidth = 51;
@@ -425,6 +441,7 @@
             this.tabPage3.Controls.Add(this.tb2);
             this.tabPage3.Controls.Add(this.tb1);
             this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.ImageIndex = 4;
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(879, 659);
@@ -506,7 +523,6 @@
             // 
             this.tabPage4.Controls.Add(this.formMeal);
             this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Controls.Add(this.btnSubmit);
             this.tabPage4.Controls.Add(this.formContent);
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.formDate);
@@ -516,6 +532,8 @@
             this.tabPage4.Controls.Add(this.formSubject);
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.btnSubmit);
+            this.tabPage4.ImageIndex = 1;
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(879, 659);
@@ -545,19 +563,6 @@
             this.label12.Size = new System.Drawing.Size(159, 29);
             this.label12.TabIndex = 11;
             this.label12.Text = "Bữa phản ánh";
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Image = global::SinhVienUI.Properties.Resources.check;
-            this.btnSubmit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubmit.Location = new System.Drawing.Point(662, 561);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(172, 40);
-            this.btnSubmit.TabIndex = 10;
-            this.btnSubmit.Text = "Gửi";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // formContent
             // 
@@ -650,8 +655,22 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Phản hồi cho nhà bếp/quản trị viên";
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Image = global::SinhVienUI.Properties.Resources.check;
+            this.btnSubmit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubmit.Location = new System.Drawing.Point(662, 561);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(172, 40);
+            this.btnSubmit.TabIndex = 10;
+            this.btnSubmit.Text = "Gửi";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btnDangXuat);
             this.tabPage5.Controls.Add(this.txtChuyenNganh);
             this.tabPage5.Controls.Add(this.btnUpdate);
             this.tabPage5.Controls.Add(this.txtChucVu);
@@ -664,12 +683,26 @@
             this.tabPage5.Controls.Add(this.txtHoTen);
             this.tabPage5.Controls.Add(this.label14);
             this.tabPage5.Controls.Add(this.label13);
+            this.tabPage5.ImageIndex = 0;
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(879, 659);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Thông tin cá nhân";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.Image = global::SinhVienUI.Properties.Resources.logout;
+            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangXuat.Location = new System.Drawing.Point(534, 529);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(195, 58);
+            this.btnDangXuat.TabIndex = 13;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // txtChuyenNganh
             // 
@@ -693,9 +726,9 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::SinhVienUI.Properties.Resources.check;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(606, 533);
+            this.btnUpdate.Location = new System.Drawing.Point(333, 529);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(123, 40);
+            this.btnUpdate.Size = new System.Drawing.Size(195, 58);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "Lưu";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -795,6 +828,16 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Thông tin cá nhân";
             // 
+            // listImageTabs
+            // 
+            this.listImageTabs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listImageTabs.ImageStream")));
+            this.listImageTabs.TransparentColor = System.Drawing.Color.Transparent;
+            this.listImageTabs.Images.SetKeyName(0, "account.png");
+            this.listImageTabs.Images.SetKeyName(1, "feedback.png");
+            this.listImageTabs.Images.SetKeyName(2, "history.png");
+            this.listImageTabs.Images.SetKeyName(3, "list.png");
+            this.listImageTabs.Images.SetKeyName(4, "notification.png");
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -807,14 +850,15 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cơm sinh viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureComToi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureComTrua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHNight)).EndInit();
@@ -838,19 +882,11 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DateTimePicker date;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvDay;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DishName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DishType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.DataGridView dgvNight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button btnBaoComTrua;
         private System.Windows.Forms.Button btnBaoComToi;
         private System.Windows.Forms.MonthCalendar monthCalendar;
@@ -893,6 +929,16 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtHoTen;
+        private System.Windows.Forms.PictureBox pictureComToi;
+        private System.Windows.Forms.PictureBox pictureComTrua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DishName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DishType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+        private System.Windows.Forms.Button btnDangXuat;
+        private System.Windows.Forms.ImageList listImageTabs;
     }
 }
 

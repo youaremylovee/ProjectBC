@@ -16,6 +16,8 @@
         <AssociationConnector Association="QuanLyComTruaModel.FK_Feedback_Users" />
         <AssociationConnector Association="QuanLyComTruaModel.FK_Notifications_Users" />
         <AssociationConnector Association="QuanLyComTruaModel.FK_Orders_Users" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.Cloud" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="QuanLyComTruaModel.Configuration" Width="1.5" PointX="2.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

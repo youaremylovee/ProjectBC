@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectBaoCom\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{69FA1924-ED21-42D2-BFF8-4B6EC29DEAF4}|..\\AdminUI\\AdminUI.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\adminui\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA78AF8A-1B5F-4C30-ACC9-6DF71384DDC0}|..\\NhaBepUI\\NhaBepUI.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\nhabepui\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF062075-D4C6-4E67-ABF9-8C59829821D8}|ProjectBaoCom.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\projectbaocom\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DF062075-D4C6-4E67-ABF9-8C59829821D8}|ProjectBaoCom.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5E5C5C-8CFF-4A6B-BFB1-6C2669295F5B}|..\\SinhVienUI\\SinhVienUI.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\sinhvienui\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E5E5C5C-8CFF-4A6B-BFB1-6C2669295F5B}|..\\SinhVienUI\\SinhVienUI.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\sinhvienui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E5E5C5C-8CFF-4A6B-BFB1-6C2669295F5B}|..\\SinhVienUI\\SinhVienUI.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\sinhvienui\\adomodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1E5E5C5C-8CFF-4A6B-BFB1-6C2669295F5B}|..\\SinhVienUI\\SinhVienUI.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\sinhvienui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E5E5C5C-8CFF-4A6B-BFB1-6C2669295F5B}|..\\SinhVienUI\\SinhVienUI.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\sinhvienui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E5E5C5C-8CFF-4A6B-BFB1-6C2669295F5B}|..\\SinhVienUI\\SinhVienUI.csproj|c:\\users\\nguyen dan truong\\desktop\\data\\freelance\\baocom\\sinhvienui\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF062075-D4C6-4E67-ABF9-8C59829821D8}|ProjectBaoCom.csproj|C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectBaoCom\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF062075-D4C6-4E67-ABF9-8C59829821D8}|ProjectBaoCom.csproj|solutionrelative:session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,80 +29,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ADOModel.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\ADOModel.edmx",
-              "RelativeDocumentMoniker": "..\\SinhVienUI\\ADOModel.edmx",
-              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\ADOModel.edmx [Diagram1]",
-              "RelativeToolTip": "..\\SinhVienUI\\ADOModel.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-12-06T07:37:27.657Z",
-              "EditorCaption": " [Diagram1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\Program.cs",
-              "RelativeDocumentMoniker": "..\\SinhVienUI\\Program.cs",
-              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\Program.cs",
-              "RelativeToolTip": "..\\SinhVienUI\\Program.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBUAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T04:32:55.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Menu.cs",
-              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\Menu.cs",
-              "RelativeDocumentMoniker": "..\\SinhVienUI\\Menu.cs",
-              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\Menu.cs",
-              "RelativeToolTip": "..\\SinhVienUI\\Menu.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T03:41:31.456Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmMain.cs",
-              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\FrmMain.cs",
-              "RelativeDocumentMoniker": "..\\SinhVienUI\\FrmMain.cs",
-              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\FrmMain.cs",
-              "RelativeToolTip": "..\\SinhVienUI\\FrmMain.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAwwK4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T03:40:36.048Z",
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\AdminUI\\App.config",
+              "RelativeDocumentMoniker": "..\\AdminUI\\App.config",
+              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\AdminUI\\App.config",
+              "RelativeToolTip": "..\\AdminUI\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-14T08:40:01.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\NhaBepUI\\App.config",
+              "RelativeDocumentMoniker": "..\\NhaBepUI\\App.config",
+              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\NhaBepUI\\App.config",
+              "RelativeToolTip": "..\\NhaBepUI\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-14T08:39:56.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectBaoCom\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectBaoCom\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-14T08:39:49.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\App.config",
+              "RelativeDocumentMoniker": "..\\SinhVienUI\\App.config",
+              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\App.config",
+              "RelativeToolTip": "..\\SinhVienUI\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-14T08:39:45.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmMain.cs",
+              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\FrmMain.cs",
+              "RelativeDocumentMoniker": "..\\SinhVienUI\\FrmMain.cs",
+              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\FrmMain.cs",
+              "RelativeToolTip": "..\\SinhVienUI\\FrmMain.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAgwLUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T08:32:00.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "FrmMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\FrmMain.cs",
               "RelativeDocumentMoniker": "..\\SinhVienUI\\FrmMain.cs",
               "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\SinhVienUI\\FrmMain.cs [Design]",
               "RelativeToolTip": "..\\SinhVienUI\\FrmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T14:36:56.346Z",
+              "WhenOpened": "2024-12-14T08:31:59.449Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Session.cs",
-              "DocumentMoniker": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectBaoCom\\Session.cs",
-              "RelativeDocumentMoniker": "Session.cs",
-              "ToolTip": "C:\\Users\\Nguyen Dan Truong\\Desktop\\Data\\Freelance\\BaoCom\\ProjectBaoCom\\Session.cs",
-              "RelativeToolTip": "Session.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAuwAsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T04:18:36.503Z"
             }
           ]
         }
